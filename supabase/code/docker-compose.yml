@@ -436,6 +436,8 @@ services:
 
   # Update the DATABASE_URL if you are using an external Postgres database
   supavisor:
+    ports:
+      - "${POOLER_PROXY_PORT_TRANSACTION}:6543"
     image: supabase/supavisor:2.7.4
     restart: unless-stopped
     volumes:
